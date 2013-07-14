@@ -52,6 +52,13 @@ int main(int argc, const char * argv[])
         NSLog(@"Smallest node - %@", [nodeParent smallestNode]);
         NSLog(@"Node with value 3 - %@", [nodeParent findNodeWithData:3.0f]);
         
+        printNode(nodeParent, 0);
+        
+        [nodeParent reverse];
+        
+        printNode(nodeParent, 0);
+        
+        
         
     }
     return 0;

@@ -88,6 +88,25 @@
     return [self nodeForComparisonResult:NSOrderedDescending];
 }
 
+-(int)balance
+{
+    int balance = 0;
+    
+    if(self.leftNode)
+    {
+        balance -= 1;
+        balance += [self.leftNode balance];
+    }
+    
+    if(self.rightNode)
+    {
+        balance += 1;
+        balance += [self.leftNode balance];
+    }
+    
+    return balance;
+}
+
 -(Node *)findNodeWithData:(float)data
 {
     if(self.data == data)
@@ -108,6 +127,20 @@
     }
     
     return nil;
+}
+
+-(void)reverse
+{
+    if(self.leftNode)
+        [self.leftNode reverse];
+    
+    if(self.rightNode)
+        [self.rightNode reverse];
+    
+    Node *tempLeft = self.leftNode;
+    Node *tempRight = self.rightNode;
+    self.leftNode = tempRight;
+    self.rightNode = tempLeft;
 }
 
 #pragma mark - Comparison

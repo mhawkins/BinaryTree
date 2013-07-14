@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+
+NS_ENUM(NSInteger, NodeBalance) {
+    NodeBalanceLeft = -1,
+    NodeBalanceEqual = 0,
+    NodeBalanceRight = 1
+};
+
 @interface Node : NSObject
 {
     
@@ -26,6 +33,8 @@
 -(Node *)largestNode;
 -(Node *)smallestNode;
 -(Node *)findNodeWithData:(float)data;
+-(int)balance;
+-(void)reverse;
 
 // informal protocol
 -(NSComparisonResult)compare:(Node *)object;
