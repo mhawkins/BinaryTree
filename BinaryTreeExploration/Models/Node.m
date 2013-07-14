@@ -17,22 +17,22 @@
 #pragma mark - Initializers
 -(id)init
 {
-    self = [self initWithData:0.0f];
+    self = [self initWithValue:0.0f];
     return self;
 }
 
--(id)initWithData:(float)data
+-(id)initWithValue:(float)value
 {
-    self = [self initWithData:data andLeftNode:nil andRightNode:nil];
+    self = [self initWithValue:value andLeftNode:nil andRightNode:nil];
     return self;
 }
 
--(id)initWithData:(float)data andLeftNode:(Node *)leftNode andRightNode:(Node *)rightNode
+-(id)initWithValue:(float)value andLeftNode:(Node *)leftNode andRightNode:(Node *)rightNode
 {
     self = [super init];
     if(self)
     {
-        self.data = data;
+        self.value = value;
         self.leftNode = leftNode;
         self.rightNode = rightNode;
     }
@@ -43,14 +43,14 @@
 #pragma mark - Override
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"[Node  '%0.2f']", self.data];
+    return [NSString stringWithFormat:@"['%@' '%0.2f']", [super description], self.value];
 }
 
 
 #pragma mark - Properties
 -(float)sum
 {
-    float sum = self.data;
+    float sum = self.value;
     if(self.leftNode)
     {
         sum += [self.leftNode sum];
@@ -63,21 +63,6 @@
     return sum;
 }
 
-#pragma mark - Instance variables
--(BOOL)containsData:(float)data
-{
-    if(self.data == data)
-        return YES;
-    
-    if(self.leftNode && [self.leftNode containsData:data])
-        return YES;
-    
-    if(self.rightNode && [self.rightNode containsData:data])
-        return YES;
-    
-    return NO;
-}
-
 -(Node *)largestNode
 {
     return [self nodeForComparisonResult:NSOrderedAscending];
@@ -86,6 +71,21 @@
 -(Node *)smallestNode
 {
     return [self nodeForComparisonResult:NSOrderedDescending];
+}
+
+#pragma mark - Instance variables
+-(BOOL)containsNodeWithValue:(float)data
+{
+    if(self.value == data)
+        return YES;
+    
+    if(self.leftNode && [self.leftNode containsNodeWithValue:data])
+        return YES;
+    
+    if(self.rightNode && [self.rightNode containsNodeWithValue:data])
+        return YES;
+    
+    return NO;
 }
 
 -(int)balance
@@ -107,21 +107,21 @@
     return balance;
 }
 
--(Node *)findNodeWithData:(float)data
+-(Node *)findNodeWithValue:(float)value
 {
-    if(self.data == data)
+    if(self.value == value)
         return self;
     
     if(self.leftNode)
     {
-        Node *leftNodeResult = [self.leftNode findNodeWithData:data];
+        Node *leftNodeResult = [self.leftNode findNodeWithValue:value];
         if(leftNodeResult)
             return leftNodeResult;
     }
     
     if(self.rightNode)
     {
-        Node *rightNodeResult = [self.rightNode findNodeWithData:data];
+        Node *rightNodeResult = [self.rightNode findNodeWithValue:value];
         if(rightNodeResult)
             return rightNodeResult;
     }
@@ -143,33 +143,76 @@
     self.rightNode = tempLeft;
 }
 
--(NSString *)stringInOrder
+-(NSString *)stringPrefixOrder
+{
+    NSMutableString *result = [NSMutableString string];
+    
+    [result appendFormat:@" %@ ", self.description];
+    
+    if(self.leftNode)
+    {
+        NSString *leftString = [self.leftNode stringPrefixOrder];
+        [result appendString:leftString];
+    }
+    
+    if(self.rightNode)
+    {
+        NSString *rightString = [self.rightNode stringPrefixOrder];
+        [result appendString:rightString];
+    }
+    
+    return result;
+}
+-(NSString *)stringInfixOrder
 {
     NSMutableString *result = [NSMutableString string];
     
     if(self.leftNode)
     {
-        NSString *leftString = [self.leftNode stringInOrder];
+        NSString *leftString = [self.leftNode stringInfixOrder];
         [result appendString:leftString];
     }
     
-    [result appendFormat:@" %0.2f ", self.data];
+    [result appendFormat:@" %@ ", self.description];
     
     if(self.rightNode)
     {
-        NSString *rightString = [self.rightNode stringInOrder];
+        NSString *rightString = [self.rightNode stringInfixOrder];
         [result appendString:rightString];
     }
     
     return result;    
 }
 
+
+-(NSString *)stringPostfixOrder
+{
+    NSMutableString *result = [NSMutableString string];
+    
+    if(self.leftNode)
+    {
+        NSString *leftString = [self.leftNode stringPostfixOrder];
+        [result appendString:leftString];
+    }
+    
+    if(self.rightNode)
+    {
+        NSString *rightString = [self.rightNode stringPostfixOrder];
+        [result appendString:rightString];
+    }
+    
+    [result appendFormat:@" %@ ", self.description];
+    
+    return result;
+}
+
+
 #pragma mark - Comparison
 -(NSComparisonResult)compare:(Node *)object
 {
-    if(self.data > object.data)
+    if(self.value > object.value)
         return NSOrderedDescending;
-    else if(self.data < object.data)
+    else if(self.value < object.value)
         return NSOrderedAscending;
     else
         return NSOrderedSame;

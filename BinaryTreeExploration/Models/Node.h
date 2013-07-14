@@ -8,34 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-
-NS_ENUM(NSInteger, NodeBalance) {
-    NodeBalanceLeft = -1,
-    NodeBalanceEqual = 0,
-    NodeBalanceRight = 1
-};
-
 @interface Node : NSObject
 {
     
 }
 @property(nonatomic,weak) Node *leftNode;
 @property(nonatomic,weak) Node *rightNode;
-@property(nonatomic,assign) float data;
+@property(nonatomic,assign) float value;
 @property(nonatomic,readonly) float sum;
+@property(nonatomic,readonly) Node * smallestNode;
+@property(nonatomic,readonly) Node * largestNode;
 
 // Initializers
--(id)initWithData:(float)data;
--(id)initWithData:(float)data andLeftNode:(Node *)leftNode andRightNode:(Node *)rightNode;
+-(id)initWithValue:(float)value;
+-(id)initWithValue:(float)value andLeftNode:(Node *)leftNode andRightNode:(Node *)rightNode;
 
 // Instance methods
--(BOOL)containsData:(float)data;
--(Node *)largestNode;
--(Node *)smallestNode;
--(Node *)findNodeWithData:(float)data;
+-(BOOL)containsNodeWithValue:(float)value;
+-(Node *)findNodeWithValue:(float)value;
 -(int)balance;
 -(void)reverse;
--(NSString *)stringInOrder;
+-(NSString *)stringPrefixOrder;
+-(NSString *)stringInfixOrder;
+-(NSString *)stringPostfixOrder;
 
 // informal protocol
 -(NSComparisonResult)compare:(Node *)object;
