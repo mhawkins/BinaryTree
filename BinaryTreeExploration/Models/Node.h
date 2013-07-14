@@ -35,6 +35,7 @@ NS_ENUM(NSInteger, NodeBalance) {
 -(Node *)findNodeWithData:(float)data;
 -(int)balance;
 -(void)reverse;
+-(NSString *)stringInOrder;
 
 // informal protocol
 -(NSComparisonResult)compare:(Node *)object;

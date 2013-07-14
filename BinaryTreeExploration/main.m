@@ -52,10 +52,14 @@ int main(int argc, const char * argv[])
         NSLog(@"Smallest node - %@", [nodeParent smallestNode]);
         NSLog(@"Node with value 3 - %@", [nodeParent findNodeWithData:3.0f]);
         
+        
+        NSLog(@"Tree in order... '%@'", [nodeParent stringInOrder]);
+
+        NSLog(@"Tree hierarchy...");
         printNode(nodeParent, 0);
-        
+
+        NSLog(@"Tree hierarchy after reversal...");
         [nodeParent reverse];
-        
         printNode(nodeParent, 0);
         
         

@@ -27,10 +27,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C9339C571792DDBB009B5A16 /* BinaryTreeExploration */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinaryTreeExploration; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9339C571792DDBB009B5A16 /* BinaryTree */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = BinaryTree; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9339C5A1792DDBB009B5A16 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C9339C5D1792DDBB009B5A16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		C9339C601792DDBB009B5A16 /* BinaryTreeExploration-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BinaryTreeExploration-Prefix.pch"; sourceTree = "<group>"; };
+		C9339C601792DDBB009B5A16 /* BinaryTree-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BinaryTree-Prefix.pch"; sourceTree = "<group>"; };
 		C9339C611792DDBB009B5A16 /* BinaryTreeExploration.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BinaryTreeExploration.1; sourceTree = "<group>"; };
 		C9339C691792DDF2009B5A16 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
 		C9339C6A1792DDF2009B5A16 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		C9339C581792DDBB009B5A16 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C9339C571792DDBB009B5A16 /* BinaryTreeExploration */,
+				C9339C571792DDBB009B5A16 /* BinaryTree */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -87,7 +87,7 @@
 		C9339C5F1792DDBB009B5A16 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				C9339C601792DDBB009B5A16 /* BinaryTreeExploration-Prefix.pch */,
+				C9339C601792DDBB009B5A16 /* BinaryTree-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -104,9 +104,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C9339C561792DDBB009B5A16 /* BinaryTreeExploration */ = {
+		C9339C561792DDBB009B5A16 /* BinaryTree */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C9339C651792DDBB009B5A16 /* Build configuration list for PBXNativeTarget "BinaryTreeExploration" */;
+			buildConfigurationList = C9339C651792DDBB009B5A16 /* Build configuration list for PBXNativeTarget "BinaryTree" */;
 			buildPhases = (
 				C9339C531792DDBB009B5A16 /* Sources */,
 				C9339C541792DDBB009B5A16 /* Frameworks */,
@@ -116,9 +116,9 @@
 			);
 			dependencies = (
 			);
-			name = BinaryTreeExploration;
+			name = BinaryTree;
 			productName = BinaryTreeExploration;
-			productReference = C9339C571792DDBB009B5A16 /* BinaryTreeExploration */;
+			productReference = C9339C571792DDBB009B5A16 /* BinaryTree */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -130,7 +130,7 @@
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Matt Hawkins";
 			};
-			buildConfigurationList = C9339C521792DDBB009B5A16 /* Build configuration list for PBXProject "BinaryTreeExploration" */;
+			buildConfigurationList = C9339C521792DDBB009B5A16 /* Build configuration list for PBXProject "BinaryTree" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -142,7 +142,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C9339C561792DDBB009B5A16 /* BinaryTreeExploration */,
+				C9339C561792DDBB009B5A16 /* BinaryTree */,
 			);
 		};
 /* End PBXProject section */
@@ -223,8 +223,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BinaryTreeExploration/BinaryTreeExploration-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "BinaryTreeExploration/BinaryTree-Prefix.pch";
+				PRODUCT_NAME = BinaryTree;
 			};
 			name = Debug;
 		};
@@ -232,15 +232,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BinaryTreeExploration/BinaryTreeExploration-Prefix.pch";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				GCC_PREFIX_HEADER = "BinaryTreeExploration/BinaryTree-Prefix.pch";
+				PRODUCT_NAME = BinaryTree;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C9339C521792DDBB009B5A16 /* Build configuration list for PBXProject "BinaryTreeExploration" */ = {
+		C9339C521792DDBB009B5A16 /* Build configuration list for PBXProject "BinaryTree" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9339C631792DDBB009B5A16 /* Debug */,
@@ -249,7 +249,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C9339C651792DDBB009B5A16 /* Build configuration list for PBXNativeTarget "BinaryTreeExploration" */ = {
+		C9339C651792DDBB009B5A16 /* Build configuration list for PBXNativeTarget "BinaryTree" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C9339C661792DDBB009B5A16 /* Debug */,

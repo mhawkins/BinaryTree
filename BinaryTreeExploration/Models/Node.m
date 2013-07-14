@@ -143,6 +143,27 @@
     self.rightNode = tempLeft;
 }
 
+-(NSString *)stringInOrder
+{
+    NSMutableString *result = [NSMutableString string];
+    
+    if(self.leftNode)
+    {
+        NSString *leftString = [self.leftNode stringInOrder];
+        [result appendString:leftString];
+    }
+    
+    [result appendFormat:@" %0.2f ", self.data];
+    
+    if(self.rightNode)
+    {
+        NSString *rightString = [self.rightNode stringInOrder];
+        [result appendString:rightString];
+    }
+    
+    return result;    
+}
+
 #pragma mark - Comparison
 -(NSComparisonResult)compare:(Node *)object
 {
