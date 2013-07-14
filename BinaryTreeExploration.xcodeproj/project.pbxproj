@@ -10,6 +10,7 @@
 		C9339C5B1792DDBB009B5A16 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9339C5A1792DDBB009B5A16 /* Foundation.framework */; };
 		C9339C5E1792DDBB009B5A16 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9339C5D1792DDBB009B5A16 /* main.m */; };
 		C9339C621792DDBB009B5A16 /* BinaryTreeExploration.1 in CopyFiles */ = {isa = PBXBuildFile; fileRef = C9339C611792DDBB009B5A16 /* BinaryTreeExploration.1 */; };
+		C9339C6B1792DDF2009B5A16 /* Node.m in Sources */ = {isa = PBXBuildFile; fileRef = C9339C6A1792DDF2009B5A16 /* Node.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		C9339C5D1792DDBB009B5A16 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C9339C601792DDBB009B5A16 /* BinaryTreeExploration-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BinaryTreeExploration-Prefix.pch"; sourceTree = "<group>"; };
 		C9339C611792DDBB009B5A16 /* BinaryTreeExploration.1 */ = {isa = PBXFileReference; lastKnownFileType = text.man; path = BinaryTreeExploration.1; sourceTree = "<group>"; };
+		C9339C691792DDF2009B5A16 /* Node.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Node.h; sourceTree = "<group>"; };
+		C9339C6A1792DDF2009B5A16 /* Node.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Node.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 		C9339C5C1792DDBB009B5A16 /* BinaryTreeExploration */ = {
 			isa = PBXGroup;
 			children = (
+				C9339C681792DDC6009B5A16 /* Models */,
 				C9339C5D1792DDBB009B5A16 /* main.m */,
 				C9339C611792DDBB009B5A16 /* BinaryTreeExploration.1 */,
 				C9339C5F1792DDBB009B5A16 /* Supporting Files */,
@@ -86,6 +90,15 @@
 				C9339C601792DDBB009B5A16 /* BinaryTreeExploration-Prefix.pch */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C9339C681792DDC6009B5A16 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9339C691792DDF2009B5A16 /* Node.h */,
+				C9339C6A1792DDF2009B5A16 /* Node.m */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C9339C5E1792DDBB009B5A16 /* main.m in Sources */,
+				C9339C6B1792DDF2009B5A16 /* Node.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
